@@ -1,0 +1,7 @@
+profiles:
+  development:
+  production:
+    base_url: http://thinkingconcurrently.com
+    deploy:
+      host: thinkingconcurrently.nfshost.com
+      path: /var/www/domains/steamcannon.org/www/htdocs
