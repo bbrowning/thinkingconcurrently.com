@@ -1,6 +1,7 @@
 ---
 layout: blog
 title: TorqueBox Vagrant Box Updated to Beta20
+post_id: http://thinkingconcurrently.com/2010/07/08/torquebox-vagrant-box-updated-to-beta20.html
 ---
 
 Hot on the heels of the [TorqueBox Beta20 release][beta20_release], I've pushed an updated version of the TorqueBox Vagrant box. The box is now 1.6GB in size - I'm not entirely sure why it's larger than last time but if I figure it out I'll upload a smaller version.

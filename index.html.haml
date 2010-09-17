@@ -8,9 +8,10 @@ layout: base
       %a{:href => post.url}
         = post.title
     %h3
-      = post.date.strftime('%A %B %d')
+      = post.date.strftime('%A %B %d %Y')
     .content
       ~post.content
     .comments
+      = post.intense_debate_comments_link
 
 = page.posts.links

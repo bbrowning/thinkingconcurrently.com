@@ -17,7 +17,8 @@ layout: base
   %h2
     = page.title
   %h3
-    = page.date.strftime('%A %B %d')
+    = page.date.strftime('%A %B %d %Y')
   .content
     ~page.content
   .comments
+    = page.intense_debate_comments
