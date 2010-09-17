@@ -11,3 +11,81 @@
 @import "partials/page";
 @import "partials/form";
 @import "partials/two_col";
+
+
+#header {
+  margin-bottom: 1em;
+  border-bottom: 1px solid black;
+  #header_title {
+    @include column($content-columns);
+    font-size: 260%;
+    font-weight: bold;
+    a {
+      color: #000;
+    }
+  }
+  #header_sidebar {
+    @include prepend(1);
+    @include column($sidebar-columns - 1, true);
+    margin-top: 1.8em;
+  }
+}
+
+#footer {
+  margin-top: 1em;
+  border-top: 1px solid black;
+  font-size: 80%;
+}
+
+#sidebar {
+  h3 {
+    font-size: 120%;
+  }
+  ul {
+    padding-left: 1em;
+    list-style-type: none;
+  }
+}
+
+body.bp a {
+  text-decoration: none;
+}
+
+body.bp .post {
+  padding-bottom: 2em;
+  margin-bottom: 2em;
+  border-bottom: 1px solid #888;
+  h2 {
+    font-size: 170%;
+    font-weight: bold;
+    margin: 0px;
+    padding: 0px;
+  }
+  h3 {
+    font-size: 120%;
+    font-weight: bold;
+    margin: 0px;
+    margin-bottom: 1em;
+    padding: 0px;
+  }
+  .content {
+    font-size: 110%;
+  }
+}
+
+.pagination-links {
+  font-size: 90%;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  .page-link, a, .current-page, span {
+    padding: .4em;
+  }
+  .page-link, a, .current-page {
+    border: 1px solid #888;
+  }
+  .current-page {
+    border: 1px solid #555;
+    background-color: #ddd;
+    font-weight: bold;
+  }
+}
