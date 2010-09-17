@@ -1,0 +1,1 @@
+RedirectMatch 301 ^/(\d+)/(\d+)/(\d+)/(.+)\.html$ /blog/$1/$2/$3/$4
