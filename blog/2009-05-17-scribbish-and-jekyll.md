@@ -12,23 +12,15 @@ Both Mephisto and Jekyll use the Liquid templating engine so the port was pretty
 Jekyll has an include tag to create reusable components but, unlike Mephisto's, you can't directly pass variables to the included file. This is fairly easy to workaround by using Liquid's `assign` tag or explicitly looping over a collection of objects instead of using Mephisto's shortcuts. For example:
 
 **Jekyll**
-{% highlight text %}
-{ % for post in site.posts % }
-  { % include post.html % }
-{ % endfor % }
-{% endhighlight %}
+    {% for post in site.posts %}
+      {% include post.html %}
+    {% endfor %}
 
 **Mephisto**
-{% highlight text %}
-{ % include 'article' with articles % }
-{% endhighlight %}
-
-*There shouldn't be a space between the brackets and percent signs but I had to add one for display reasons*
+    {% include 'article' with articles %}
 
 The Jekyll include tag looks for an `_includes` directory at the root source directory. However, if you try to use the include tag from an already included file there's a bug where it looks for `_includes/_includes/included_file.html`. To workaround this for now I just created a symlink in the `_includes` directory to itself.
-{% highlight text %}
-cd _includes && ln -s . _includes
-{% endhighlight %}
+    cd _includes && ln -s . _includes
 
 Take a look at this blog's [source][blog_source], particularly the \_layouts and \_includes directories, if you'd like to use the Scribbish theme for your own Jekyll-based blog.
 
