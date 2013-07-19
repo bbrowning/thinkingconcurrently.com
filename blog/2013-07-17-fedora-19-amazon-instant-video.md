@@ -26,9 +26,9 @@ First, head to <http://get.adobe.com/flashplayer/> and download the
     sudo semodule_package -o adobedrm.pp -m adobedrm.mod
 
 Download the fakehal RPMs for Fedora 19 at
-<http://thinkingconcurrently.com/f19_flash/fakehal-0.5.14-7.fc19.x86_64.rpm>
+<http://thinkingconcurrently.com/files/f19_flash/fakehal-0.5.14-7.fc19.x86_64.rpm>
 and
-<http://thinkingconcurrently.com/f19_flash/fakehal-libs-0.5.14-7.fc19.x86_64.rpm>
+<http://thinkingconcurrently.com/files/f19_flash/fakehal-libs-0.5.14-7.fc19.x86_64.rpm>
 
     # Install the fakehal RPMs
     sudo yum install -y fakehal-0.5.14-7.fc19.x86_64.rpm \
@@ -37,9 +37,11 @@ and
 At this point, make sure all Firefox windows are closed.
 
     rm -rf ~/.adobe/Flash_Player/
-    sudo mkdir -p /etc/hal/fdi/preprobe /etc/hal/fdi/information \
-      /etc/hal/fdi/policy /usr/share/hal/fdi/preprobe \
-      /usr/share/hal/fdi/policy/20thirdparty
+    sudo mkdir -p /usr/share/hal/fdi/preprobe \
+      /usr/share/hal/fdi/information \
+      /usr/share/hal/fdi/policy/20thirdparty \
+      /var/cache/hald/
+    sudo ln -s /usr/share/hal /etc/hal
     sudo touch /var/cache/hald/fdi-cache
     sudo systemctl start haldaemon.service
 
