@@ -39,5 +39,7 @@ Awestruct::Extensions::Pipeline.new do
   extension IntenseDebateFixed.new()
 
   helper Awestruct::Extensions::GoogleAnalytics
+
+  extension Awestruct::Extensions::Sitemap.new
 end
 
